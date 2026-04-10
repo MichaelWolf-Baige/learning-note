@@ -1,17 +1,11 @@
----
-name: school-server-tutorial
-description: 详细教程 - 如何连接学校服务器
-type: reference
-originSessionId: 8c56841c-30be-4aa9-ac2d-aa4e8855e03c
----
 # 学校服务器 SSH 连接详细教程
 
 ## 一、基本信息
 
 | 参数 | 值 |
 |------|-----|
-| 服务器 IP | `10.1.36.65` |
-| 用户名 | `b23113_` |
+| 服务器 IP | `<你的服务器IP>` |
+| 用户名 | `<你的用户名>` |
 | 端口 | `22`（默认） |
 
 ---
@@ -47,12 +41,12 @@ ssh -V
 打开 PowerShell / CMD / 终端，输入：
 
 ```bash
-ssh b23113_@10.1.36.65
+ssh <你的用户名>@<你的服务器IP>
 ```
 
 首次连接会提示：
 ```
-The authenticity of host '10.1.36.65' can't be established.
+The authenticity of host '<你的服务器IP>' can't be established.
 ECDSA key fingerprint is SHA256:xxx...
 Are you sure you want to continue connecting (yes/no)?
 ```
@@ -62,14 +56,14 @@ Are you sure you want to continue connecting (yes/no)?
 ### 3.2 指定端口（如果端口不是默认 22）
 
 ```bash
-ssh -p 22 b23113_@10.1.36.65
+ssh -p 22 <你的用户名>@<你的服务器IP>
 ```
 
 ### 3.3 登录成功后的样子
 
 ```
-Last login: Wed Apr 9 10:00:00 2025 from 10.1.36.xx
-[b23113_@master ~]$
+Last login: Wed Apr 9 10:00:00 2025 from 10.1.xx.xx
+[你的用户名@master ~]$
 ```
 
 现在你已经在服务器上了，可以执行 Linux 命令。
@@ -109,14 +103,14 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC... 用户名@电脑名
 
 Windows PowerShell（需要 Git Bash 或 OpenSSH 完整版）：
 ```bash
-type $env:USERPROFILE\.ssh\id_rsa.pub | ssh b23113_@10.1.36.65 "cat >> ~/.ssh/authorized_keys"
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <你的用户名>@<你的服务器IP> "cat >> ~/.ssh/authorized_keys"
 ```
 
 **方法 B：手动复制**
 
 1. 登录服务器：
    ```bash
-   ssh b23113_@10.1.36.65
+   ssh <你的用户名>@<你的服务器IP>
    ```
 
 2. 创建 .ssh 目录（如果不存在）：
@@ -146,7 +140,7 @@ type $env:USERPROFILE\.ssh\id_rsa.pub | ssh b23113_@10.1.36.65 "cat >> ~/.ssh/au
 退出服务器（输入 `exit`），然后重新连接：
 
 ```bash
-ssh b23113_@10.1.36.65
+ssh <你的用户名>@<你的服务器IP>
 ```
 
 如果不需要输入密码直接登录，配置成功！
@@ -155,7 +149,7 @@ ssh b23113_@10.1.36.65
 
 ## 五、进阶：配置 SSH 别名
 
-每次输入 `ssh b23113_@10.1.36.65` 比较长，可以设置别名。
+每次输入 `ssh <你的用户名>@<你的服务器IP>` 比较长，可以设置别名。
 
 ### 5.1 编辑本地配置文件
 
@@ -164,8 +158,8 @@ Windows：创建或编辑 `C:\Users\你的用户名\.ssh\config` 文件
 添加以下内容：
 ```
 Host school
-    HostName 10.1.36.65
-    User b23113_
+    HostName <你的服务器IP>
+    User <你的用户名>
     Port 22
 ```
 
@@ -192,35 +186,35 @@ exit
 ### 6.2 从服务器下载文件到本地
 
 ```bash
-scp b23113_@10.1.36.65:/远程文件路径 /本地保存路径
+scp <你的用户名>@<你的服务器IP>:/远程文件路径 /本地保存路径
 ```
 
 例如：
 ```bash
-scp b23113_@10.1.36.65:~/data.txt C:\Users\你的用户名\Downloads\
+scp <你的用户名>@<你的服务器IP>:~/data.txt C:\Users\你的用户名\Downloads\
 ```
 
 ### 6.3 从本地上传文件到服务器
 
 ```bash
-scp /本地文件路径 b23113_@10.1.36.65:/远程保存路径
+scp /本地文件路径 <你的用户名>@<你的服务器IP>:/远程保存路径
 ```
 
 例如：
 ```bash
-scp C:\Users\你的用户名\Documents\file.txt b23113_@10.1.36.65:~/uploads/
+scp C:\Users\你的用户名\Documents\file.txt <你的用户名>@<你的服务器IP>:~/uploads/
 ```
 
 ### 6.4 传输整个文件夹
 
 下载文件夹（加 `-r` 参数）：
 ```bash
-scp -r b23113_@10.1.36.65:~/folder/ C:\Users\你的用户名\Downloads\
+scp -r <你的用户名>@<你的服务器IP>:~/folder/ C:\Users\你的用户名\Downloads\
 ```
 
 上传文件夹：
 ```bash
-scp -r C:\Users\你的用户名\Documents\folder b23113_@10.1.36.65:~/uploads/
+scp -r C:\Users\你的用户名\Documents\folder <你的用户名>@<你的服务器IP>:~/uploads/
 ```
 
 ---
@@ -235,7 +229,7 @@ scp -r C:\Users\你的用户名\Documents\folder b23113_@10.1.36.65:~/uploads/
 
 **解决：**
 - 确认你在校园网内，或使用 VPN
-- 用 ping 测试：`ping 10.1.36.65`
+- 用 ping 测试：`ping <你的服务器IP>`
 
 ### Q2: Permission denied (publickey,password)
 
@@ -255,7 +249,7 @@ scp -r C:\Users\你的用户名\Documents\folder b23113_@10.1.36.65:~/uploads/
 
 **解决：**
 ```bash
-ssh-keygen -R 10.1.36.65
+ssh-keygen -R <你的服务器IP>
 ```
 然后重新连接。
 
@@ -287,15 +281,15 @@ ssh-keygen -R 10.1.36.65
 
 ```bash
 # 连接
-ssh b23113_@10.1.36.65
+ssh <你的用户名>@<你的服务器IP>
 
 # 免密配置
 ssh-keygen -t rsa -b 4096
-type $env:USERPROFILE\.ssh\id_rsa.pub | ssh b23113_@10.1.36.65 "cat >> ~/.ssh/authorized_keys"
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <你的用户名>@<你的服务器IP> "cat >> ~/.ssh/authorized_keys"
 
 # 文件传输
-scp 本地文件 b23113_@10.1.36.65:远程路径
-scp b23113_@10.1.36.65:远程文件 本地路径
+scp 本地文件 <你的用户名>@<你的服务器IP>:远程路径
+scp <你的用户名>@<你的服务器IP>:远程文件 本地路径
 
 # 退出
 exit
