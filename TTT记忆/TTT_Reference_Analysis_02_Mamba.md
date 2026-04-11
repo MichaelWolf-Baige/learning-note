@@ -85,7 +85,7 @@ Mamba使用HiPPO矩阵初始化A，其设计目标是：
 
 ### 2.4 表达能力的数学上限
 
-$$**\text{Capacity}(h) = N \times \text{precision\_bits}**$$
+$$\text{Capacity}(h) = N \times \text{precision\bits}$$
 
 无论输入序列长度L如何增长，容量不变。
 
