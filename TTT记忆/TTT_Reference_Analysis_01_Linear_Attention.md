@@ -158,7 +158,9 @@ $$（d\times d）$$
 
 ### 思想演进
 
-**发现问题($O(n^2)$) → 技术绕过 → 理论深化 → 范式突破(test-time learning)**
+**发现问题
+($O(n^2)$) 
+→ 技术绕过 → 理论深化 → 范式突破(test-time learning)**
 
 - **Linear Attention**：揭示线性化可行，但本质是"退化学习"
 - **TTT**：将退化版本升华为完整理论，提出真正的test-time learning范式
