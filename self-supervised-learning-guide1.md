@@ -301,7 +301,8 @@ $$P(x_t \mid \tilde{X}) = \frac{\exp(h_t^T e_{x_t})}{\sum_{w \in V} \exp(h_t^T e
 
 句子："我 喜欢 苹果"，遮蔽"喜欢"
 
-输入：$\tilde{X} = \left[\text{我}, \text{[MASK]}, \text{苹果}\right]$
+输入：
+$\tilde{X} = [\text{我}, \text{[MASK]}, \text{苹果}]$
 
 Transformer 编码后，位置 2 的隐藏状态：
 
