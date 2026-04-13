@@ -23,11 +23,11 @@
 设 $p = 0.15$，$i \in M$ 为选中掩码的位置
 
 $$
-\text{masked\_token}_i = 
+\text{maskedToken}_i = 
 \begin{cases}
 \text{[MASK]} & \text{概率 } 0.8 \\
-\text{random\_token} & \text{概率 } 0.1 \\
-\text{original\_token}_i & \text{概率 } 0.1 \\
+\text{randomToken} & \text{概率 } 0.1 \\
+\text{originalToken}_i & \text{概率 } 0.1 \\
 \end{cases}
 $$
 
