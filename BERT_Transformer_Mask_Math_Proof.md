@@ -68,7 +68,7 @@ $$
 
 $w_2 = \text{[MASK]}$ → one-hot $e_{\text{[MASK]}} \in \mathbb{R}^{10000}$
 
-$x^{(0)}_2 = E \cdot e_{\text{[MASK]}} + \text{PosEmbedding}_2$
+$$x^{(0)}_2 = E \cdot e_{\text{[MASK]}} + \text{PosEmbedding}_2$$
 
 设 $E \cdot e_{\text{[MASK]}} = [0.1, 0.3, -0.2, 0.5]^T$
 
