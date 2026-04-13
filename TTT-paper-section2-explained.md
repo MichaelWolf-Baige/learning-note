@@ -454,7 +454,7 @@ Mini-batch解决了并行问题，但还有一个**硬件效率问题**：
 考虑最简单的TTT-Linear情况：
 - $\theta_K = \theta_V = \theta_Q = I$（单位矩阵）
 - $f(x) = Wx$（线性模型）
-- 第一个mini-batch，大小为$b$
+- 第一个mini-batch，大小为 $b$
 
 损失函数：
 $$\ell(W_0; x_t) = \|W_0 x_t - x_t\|^2$$
@@ -472,7 +472,7 @@ $$G_t = \nabla \ell(W_0; x_t) = 2(W_0 x_t - x_t) x_t^T$$
 **更糟糕的是：**
 - $x_t \in \mathbb{R}^d$
 - $G_t \in \mathbb{R}^{d \times d}$（远大于 $x_t$）
-- 存储$b$个$G_t$造成严重的内存I/O负担
+- 存储 $b$个 $G_t$造成严重的内存I/O负担
 
 ---
 
