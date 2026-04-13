@@ -24,7 +24,9 @@
 
 $$X \in \mathbb{R}^{T \times d_{model}}$$
 
-其中 $T$ 是序列长度，$d_{model}$ 是模型维度。
+其中 $T$ 是序列长度，
+$d_{model}$ 
+是模型维度。
 
 ### 1.2 Query、Key、Value的计算
 
